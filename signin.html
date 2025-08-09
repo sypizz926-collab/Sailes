@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sign In - SAILES</title>
   <style>
-    /* Header styles */
+    /* Top bar styles */
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -16,9 +16,7 @@
       font-family: Arial, sans-serif;
       font-weight: bold;
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 50px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
       z-index: 1000;
@@ -26,24 +24,25 @@
     .top-bar .left {
       font-size: 1.5em;
     }
-    .top-bar .right a {
+    .top-bar .right a, .top-bar .right span {
       color: white;
       text-decoration: none;
       font-weight: normal;
       font-size: 1em;
       transition: color 0.3s ease;
       margin-left: 40px;
+      cursor: pointer;
     }
     .top-bar .right a:hover {
       color: #ff9900;
     }
-    .top-bar .right a.active {
+    .top-bar .right .active {
       color: #ff9900;
       font-weight: bold;
       pointer-events: none;
+      cursor: default;
     }
 
-    /* Page styles */
     main {
       margin-top: 60px;
       padding: 20px;
@@ -52,6 +51,11 @@
       margin-left: auto;
       margin-right: auto;
       color: #333;
+    }
+
+    body {
+      margin: 0;
+      background-color: #f5f5f5;
     }
 
     h1 {
@@ -101,6 +105,7 @@
       text-align: center;
       margin-top: 12px;
       font-size: 0.9em;
+      color: #222;
     }
     .signup-link a {
       color: #ff9900;
@@ -118,7 +123,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="plans.html">Plans</a>
-      <a href="signin.html" class="active">Sign In</a>
+      <span class="active">Sign In</span>
     </nav>
   </header>
 
