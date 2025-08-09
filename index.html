@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Plans - SAILES</title>
+  <title>SAILES Home</title>
   <style>
     /* Top bar styles */
     .top-bar {
@@ -32,83 +32,73 @@
       font-weight: normal;
       font-size: 1em;
       transition: color 0.3s ease;
-      margin-left: 20px;
     }
     .top-bar .right a:hover {
       color: #ff9900;
     }
-    .top-bar .right .active {
-      color: #ff9900;
-      font-weight: bold;
-      pointer-events: none; /* Disable clicking on current page */
-      margin-left: 20px;
+
+    /* Page background */
+    body {
+      background-color: #121212; /* very dark grey */
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
+    /* Left and right side image containers */
+    .side-images {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 15vw;
+      min-width: 120px;
+      padding: 10px 0;
+      gap: 20px;
+      position: fixed;
+      top: 50px;
+      bottom: 0;
+      background: transparent;
+      z-index: 500;
+    }
+    .side-images.left {
+      left: 0;
+      align-items: flex-start;
+    }
+    .side-images.right {
+      right: 0;
+      align-items: flex-end;
+    }
+    .side-images img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
+      object-fit: cover;
+      max-height: 120px;
+    }
+
+    /* Main content styling */
     main {
-      margin-top: 60px;
+      flex-grow: 1;
+      margin: 60px 20vw 20px 20vw; /* leave space for side images */
       padding: 20px;
-      font-family: Arial, sans-serif;
-      max-width: 900px;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+      color: #eee;
     }
-
     h1 {
-      margin-bottom: 24px;
-    }
-
-    .plans-container {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .plan {
-      background-color: #f5f5f5;
-      border-radius: 8px;
-      padding: 24px 16px;
-      width: 250px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-    }
-    .plan:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .plan-title {
-      font-size: 1.4em;
-      margin-bottom: 12px;
-      color: #222;
-    }
-
-    .plan-price {
-      font-size: 2em;
+      font-size: 2.4em;
       margin-bottom: 20px;
       color: #ff9900;
     }
-
-    .plan-description {
-      font-size: 1em;
-      color: #555;
-      margin-bottom: 20px;
-    }
-
-    .subscribe-btn {
-      background-color: #222;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .subscribe-btn:hover {
-      background-color: #ff9900;
-      color: #222;
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #ccc;
     }
   </style>
 </head>
@@ -116,37 +106,26 @@
   <header class="top-bar">
     <div class="left"><a href="index.html" style="color: inherit; text-decoration: none;">SAILES</a></div>
     <nav class="right">
-      <!-- Home link removed -->
       <a href="about.html">About</a>
-      <span class="active">Plans</span>
+      <a href="plans.html">Plans</a>
     </nav>
   </header>
 
+  <div class="side-images left">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=300&q=80" alt="Businessman 1" />
+    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=300&q=80" alt="Businessman 2" />
+    <img src="https://images.unsplash.com/photo-1542223616-367b1c22405e?auto=format&fit=crop&w=300&q=80" alt="Salesman 1" />
+  </div>
+
   <main>
-    <h1>Our Plans</h1>
-    <div class="plans-container">
-      <div class="plan">
-        <div class="plan-title">Individual Plan</div>
-        <div class="plan-price">$4.99 / month</div>
-        <div class="plan-description">Perfect for solo users who want to get started.</div>
-        <button class="subscribe-btn">Subscribe</button>
-      </div>
-
-      <div class="plan">
-        <div class="plan-title">Group Plan</div>
-        <div class="plan-price">$15.99 / month</div>
-        <div class="plan-description">Ideal for small teams or groups collaborating together.</div>
-        <button class="subscribe-btn">Subscribe</button>
-      </div>
-
-      <div class="plan">
-        <div class="plan-title">Team Plan</div>
-        <div class="plan-price">$49.99 / month</div>
-        <div class="plan-description">Best for larger teams needing advanced features and support.</div>
-        <button class="subscribe-btn">Subscribe</button>
-      </div>
-    </div>
+    <h1>Welcome to SAILES</h1>
+    <p>Your platform for smarter sales strategies empowered by AI and innovative technology. Explore our plans and learn more about our vision to transform sales today.</p>
   </main>
+
+  <div class="side-images right">
+    <img src="https://images.unsplash.com/photo-1551836022-21b7f7b3a0f4?auto=format&fit=crop&w=300&q=80" alt="Salesman 2" />
+    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=300&q=80" alt="Businessman 3" />
+    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Salesman 3" />
+  </div>
 </body>
 </html>
-
