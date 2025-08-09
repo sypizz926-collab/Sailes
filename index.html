@@ -5,17 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SAILES Home</title>
   <style>
-    /* Reset default margin */
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background-color: #121212; /* very dark grey */
-      font-family: Arial, sans-serif;
-      color: white;
-      overflow-x: hidden;
-    }
-
     /* Header styles */
     .top-bar {
       display: flex;
@@ -24,6 +13,7 @@
       padding: 12px 24px;
       background-color: #222;
       color: white;
+      font-family: Arial, sans-serif;
       font-weight: bold;
       position: fixed;
       top: 0;
@@ -33,11 +23,9 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
       z-index: 1000;
     }
-
     .top-bar .left {
       font-size: 1.5em;
     }
-
     .top-bar .right a {
       color: white;
       text-decoration: none;
@@ -46,105 +34,71 @@
       transition: color 0.3s ease;
       margin-left: 40px;
     }
-
     .top-bar .right a:hover {
       color: #ff9900;
     }
-
     .top-bar .right a.active {
       color: #ff9900;
       font-weight: bold;
       pointer-events: none;
     }
 
-    /* Main content styling */
+    body {
+      margin: 0;
+      background-color: #121212; /* very dark grey */
+      font-family: Arial, sans-serif;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
     main {
-      margin-top: 60px;
-      padding: 20px 60px; /* leave horizontal space for side images */
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
+      margin-top: 60px; /* space for fixed header */
     }
 
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
+    .image-section {
+      width: 90vw; /* almost full width */
+      max-width: 1200px;
+      margin: 40px auto; /* center horizontally, add vertical spacing */
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
 
-    p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Side image container */
-    .side-images {
-      position: fixed;
-      top: 50px; /* below header */
-      bottom: 0;
-      width: 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 30px;
-      z-index: 0;
-    }
-
-    .side-images.left {
-      left: 0;
-      padding-left: 10px;
-      align-items: flex-start;
-    }
-
-    .side-images.right {
-      right: 0;
-      padding-right: 10px;
-      align-items: flex-end;
-    }
-
-    .side-images img {
-      width: 90px;
+    .image-section img {
+      width: 100%;
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      display: block;
+      border-radius: 12px;
       object-fit: cover;
     }
-
   </style>
 </head>
 <body>
   <header class="top-bar">
     <div class="left"><a href="index.html" style="color: inherit; text-decoration: none;">SAILES</a></div>
     <nav class="right">
-      <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="plans.html">Plans</a>
+      <a href="signin.html">Sign In</a>
     </nav>
   </header>
 
-  <!-- Side images on left -->
-  <div class="side-images left">
-    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=100&q=80" alt="Businessman 1" />
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=100&q=80" alt="Salesman 1" />
-    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=100&q=80" alt="Businesswoman 1" />
-  </div>
-
-  <!-- Side images on right -->
-  <div class="side-images right">
-    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=100&q=80" alt="Businessman 2" />
-    <img src="https://images.unsplash.com/photo-1531891437562-430f46e2f56b?auto=format&fit=crop&w=100&q=80" alt="Salesman 2" />
-    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=100&q=80" alt="Businesswoman 2" />
-  </div>
-
   <main>
-    <h1>Welcome to SAILES</h1>
-    <p>Revolutionizing sales technology through AI and innovative tools.</p>
-    <p>Explore our plans, learn about our mission, and join us to build better business connections.</p>
+    <section class="image-section">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Businessman talking on phone" />
+    </section>
+
+    <section class="image-section">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Sales team meeting" />
+    </section>
+
+    <section class="image-section">
+      <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=1200&q=80" alt="Man using laptop with analytics" />
+    </section>
+
+    <section class="image-section">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80" alt="Business handshake" />
+    </section>
   </main>
 </body>
 </html>
