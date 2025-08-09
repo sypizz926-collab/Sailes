@@ -5,15 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SAILES Home</title>
   <style>
-    /* Top bar styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Fixed header */
     .top-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 12px 24px;
-      background-color: #222;
+      background-color: rgba(34, 34, 34, 0.9);
       color: white;
-      font-family: Arial, sans-serif;
       font-weight: bold;
       position: fixed;
       top: 0;
@@ -32,73 +39,52 @@
       font-weight: normal;
       font-size: 1em;
       transition: color 0.3s ease;
+      margin-left: 20px;
     }
     .top-bar .right a:hover {
       color: #ff9900;
     }
 
-    /* Page background */
-    body {
-      background-color: #121212; /* very dark grey */
-      margin: 0;
-      font-family: Arial, sans-serif;
+    /* Each full-screen section */
+    .section {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      background-size: cover;
+      background-position: center center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
-      display: flex;
-      min-height: 100vh;
-      overflow-x: hidden;
     }
 
-    /* Left and right side image containers */
-    .side-images {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 15vw;
-      min-width: 120px;
-      padding: 10px 0;
-      gap: 20px;
-      position: fixed;
-      top: 50px;
-      bottom: 0;
-      background: transparent;
-      z-index: 500;
-    }
-    .side-images.left {
-      left: 0;
-      align-items: flex-start;
-    }
-    .side-images.right {
-      right: 0;
-      align-items: flex-end;
-    }
-    .side-images img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
-      object-fit: cover;
-      max-height: 120px;
+    /* Dark overlay for text readability */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
     }
 
-    /* Main content styling */
-    main {
-      flex-grow: 1;
-      margin: 60px 20vw 20px 20vw; /* leave space for side images */
-      padding: 20px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+    /* Content over the overlay */
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
       text-align: center;
-      color: #eee;
+      padding: 0 20px;
     }
-    h1 {
-      font-size: 2.4em;
-      margin-bottom: 20px;
+
+    .content h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
       color: #ff9900;
     }
-    p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      color: #ccc;
+
+    .content p {
+      font-size: 1.3em;
+      line-height: 1.5;
+      color: #ddd;
     }
   </style>
 </head>
@@ -111,21 +97,37 @@
     </nav>
   </header>
 
-  <div class="side-images left">
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=300&q=80" alt="Businessman 1" />
-    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=300&q=80" alt="Businessman 2" />
-    <img src="https://images.unsplash.com/photo-1542223616-367b1c22405e?auto=format&fit=crop&w=300&q=80" alt="Salesman 1" />
-  </div>
+  <section class="section" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80');">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Welcome to SAILES</h1>
+      <p>Your platform for smarter sales strategies empowered by AI and innovative technology.</p>
+    </div>
+  </section>
 
-  <main>
-    <h1>Welcome to SAILES</h1>
-    <p>Your platform for smarter sales strategies empowered by AI and innovative technology. Explore our plans and learn more about our vision to transform sales today.</p>
-  </main>
+  <section class="section" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80');">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Connect Better</h1>
+      <p>Helping businesses connect more effectively with their customers and clients.</p>
+    </div>
+  </section>
 
-  <div class="side-images right">
-    <img src="https://images.unsplash.com/photo-1551836022-21b7f7b3a0f4?auto=format&fit=crop&w=300&q=80" alt="Salesman 2" />
-    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=300&q=80" alt="Businessman 3" />
-    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Salesman 3" />
-  </div>
+  <section class="section" style="background-image: url('https://images.unsplash.com/photo-1542223616-367b1c22405e?auto=format&fit=crop&w=1920&q=80');">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Innovate with AI</h1>
+      <p>Utilizing AI to create stronger, smarter sales strategies in a competitive market.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background-image: url('https://images.unsplash.com/photo-1551836022-21b7f7b3a0f4?auto=format&fit=crop&w=1920&q=80');">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Join Us Today</h1>
+      <p>Explore our plans and find the perfect fit for your business needs.</p>
+    </div>
+  </section>
 </body>
 </html>
+
