@@ -41,6 +41,7 @@
       color: #ff9900;
       font-weight: bold;
       pointer-events: none; /* Disable clicking on current page */
+      margin-left: 20px;
     }
 
     main {
@@ -115,34 +116,36 @@
   <header class="top-bar">
     <div class="left"><a href="index.html" style="color: inherit; text-decoration: none;">SAILES</a></div>
     <nav class="right">
-      <a href="index.html">Home</a>
+      <!-- Home link removed -->
       <a href="about.html">About</a>
-      <a href="plans.html" class="active">Plans</a>
+      <span class="active">Plans</span>
     </nav>
   </header>
 
-<main>
-  <h1>Our Plans</h1>
-  <div class="plans-container">
-    <div class="plan">
-      <div class="plan-title">Individual Plan</div>
-      <div class="plan-price">$4.99 / month</div>
-      <div class="plan-description">Perfect for solo users who want to get started.</div>
-      <button class="subscribe-btn">Subscribe</button>
-    </div>
+  <main>
+    <h1>Our Plans</h1>
+    <div class="plans-container">
+      <div class="plan">
+        <div class="plan-title">Individual Plan</div>
+        <div class="plan-price">$4.99 / month</div>
+        <div class="plan-description">Perfect for solo users who want to get started.</div>
+        <button class="subscribe-btn">Subscribe</button>
+      </div>
 
-    <div class="plan">
-      <div class="plan-title">Group Plan</div>
-      <div class="plan-price">$15.99 / month</div>
-      <div class="plan-description">Ideal for small teams or groups collaborating together.</div>
-      <button class="subscribe-btn">Subscribe</button>
-    </div>
+      <div class="plan">
+        <div class="plan-title">Group Plan</div>
+        <div class="plan-price">$15.99 / month</div>
+        <div class="plan-description">Ideal for small teams or groups collaborating together.</div>
+        <button class="subscribe-btn">Subscribe</button>
+      </div>
 
-    <div class="plan">
-      <div class="plan-title">Team Plan</div>
-      <div class="plan-price">$49.99 / month</div>
-      <div class="plan-description">Best for larger teams needing advanced features and support.</div>
-      <button class="subscribe-btn">Subscribe</button>
+      <div class="plan">
+        <div class="plan-title">Team Plan</div>
+        <div class="plan-price">$49.99 / month</div>
+        <div class="plan-description">Best for larger teams needing advanced features and support.</div>
+        <button class="subscribe-btn">Subscribe</button>
+      </div>
     </div>
-  </div>
-</main>
+  </main>
+</body>
+</html>
