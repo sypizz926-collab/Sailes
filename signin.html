@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sign In - SAILES</title>
   <style>
-    /* Top bar styles */
+    /* Header styles */
     .top-bar {
       display: flex;
       justify-content: space-between;
@@ -32,108 +32,110 @@
       font-weight: normal;
       font-size: 1em;
       transition: color 0.3s ease;
-      margin-left: 20px;
+      margin-left: 40px;
     }
     .top-bar .right a:hover {
       color: #ff9900;
     }
-
-    /* Main content styles */
-    body {
-      background-color: #121212;
-      color: #eee;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding-top: 60px; /* to offset fixed header */
-      display: flex;
-      justify-content: center;
-      align-items: start;
-      min-height: 100vh;
+    .top-bar .right a.active {
+      color: #ff9900;
+      font-weight: bold;
+      pointer-events: none;
     }
 
+    /* Page styles */
     main {
-      background-color: #1e1e1e;
-      padding: 40px 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 153, 0, 0.6);
-      width: 320px;
-      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #333;
     }
 
     h1 {
       margin-bottom: 24px;
-      color: #ff9900;
+      text-align: center;
+      font-size: 2em;
+      color: #222;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
 
     label {
-      display: block;
-      text-align: left;
-      margin-bottom: 6px;
       font-weight: bold;
-      color: #ccc;
+      margin-bottom: 6px;
     }
 
     input[type="email"],
     input[type="password"] {
-      width: 100%;
-      padding: 10px 12px;
-      margin-bottom: 20px;
-      border: none;
-      border-radius: 5px;
+      padding: 10px;
       font-size: 1em;
-    }
-
-    input[type="email"]:focus,
-    input[type="password"]:focus {
-      outline: 2px solid #ff9900;
-      background-color: #2b2b2b;
-      color: white;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline-offset: 2px;
+      outline-color: #ff9900;
     }
 
     button {
-      background-color: #ff9900;
-      color: #222;
+      background-color: #222;
+      color: white;
+      padding: 12px;
       border: none;
-      padding: 12px 20px;
       border-radius: 5px;
       font-weight: bold;
-      font-size: 1em;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      width: 100%;
     }
     button:hover {
-      background-color: #e68a00;
+      background-color: #ff9900;
+      color: #222;
     }
 
-    /* Link styles */
-    .top-bar .left a {
-      color: inherit;
+    .signup-link {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 0.9em;
+    }
+    .signup-link a {
+      color: #ff9900;
       text-decoration: none;
+    }
+    .signup-link a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header class="top-bar">
-    <div class="left"><a href="index.html">SAILES</a></div>
+    <div class="left"><a href="index.html" style="color: inherit; text-decoration: none;">SAILES</a></div>
     <nav class="right">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="plans.html">Plans</a>
+      <a href="signin.html" class="active">Sign In</a>
     </nav>
   </header>
 
   <main>
     <h1>Sign In</h1>
-    <form action="#" method="post">
-      <label for="email">Email address</label>
-      <input type="email" id="email" name="email" required placeholder="you@example.com" />
+    <form action="#" method="POST">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
 
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" required placeholder="Enter your password" />
+      <input type="password" id="password" name="password" placeholder="Enter your password" required />
 
       <button type="submit">Sign In</button>
     </form>
+    <div class="signup-link">
+      Don't have an account? <a href="signup.html">Sign up here</a>.
+    </div>
   </main>
 </body>
 </html>
