@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign In - SAILES</title>
+  <style>
+    /* Top bar styles */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      background-color: #222;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    .top-bar .left {
+      font-size: 1.5em;
+    }
+    .top-bar .right a {
+      color: white;
+      text-decoration: none;
+      font-weight: normal;
+      font-size: 1em;
+      transition: color 0.3s ease;
+      margin-left: 20px;
+    }
+    .top-bar .right a:hover {
+      color: #ff9900;
+    }
+
+    /* Main content styles */
+    body {
+      background-color: #121212;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 60px; /* to offset fixed header */
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      min-height: 100vh;
+    }
+
+    main {
+      background-color: #1e1e1e;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 153, 0, 0.6);
+      width: 320px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 24px;
+      color: #ff9900;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #ccc;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      outline: 2px solid #ff9900;
+      background-color: #2b2b2b;
+      color: white;
+    }
+
+    button {
+      background-color: #ff9900;
+      color: #222;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #e68a00;
+    }
+
+    /* Link styles */
+    .top-bar .left a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header class="top-bar">
+    <div class="left"><a href="index.html">SAILES</a></div>
+    <nav class="right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="plans.html">Plans</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Sign In</h1>
+    <form action="#" method="post">
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email" required placeholder="you@example.com" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required placeholder="Enter your password" />
+
+      <button type="submit">Sign In</button>
+    </form>
+  </main>
+</body>
+</html>
